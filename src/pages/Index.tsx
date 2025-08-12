@@ -118,9 +118,9 @@ const Index = () => {
                 <CardTitle>Online Courses & Certificates</CardTitle>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-3">
-                <a href="#" target="_blank" rel="noreferrer"><Button variant="secondary">Certificate 1</Button></a>
-                <a href="#" target="_blank" rel="noreferrer"><Button variant="secondary">Certificate 2</Button></a>
-                <a href="#" target="_blank" rel="noreferrer"><Button variant="secondary">Certificate 3</Button></a>
+                <a href="https://www.coursera.org/account/accomplishments/verify/DZ6QHM3B947L" target="_blank" rel="noreferrer"><Button variant="secondary">Certificate 1</Button></a>
+                <a href="https://www.coursera.org/account/accomplishments/verify/7NXE2K5ARVCB" target="_blank" rel="noreferrer"><Button variant="secondary">Certificate 2</Button></a>
+                <a href="https://www.coursera.org/account/accomplishments/verify/8XPSWSAJXVV4" target="_blank" rel="noreferrer"><Button variant="secondary">Certificate 3</Button></a>
               </CardContent>
             </Card>
           </div>
