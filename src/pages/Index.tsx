@@ -229,10 +229,11 @@ const Index = () => {
             </form>
             <div className="rounded-md overflow-hidden border">
               <iframe
-                title="Kolkata, India"
-                src="https://www.google.com/maps?q=Kolkata,India&output=embed"
+                title="Home: Bally, Howrah, West Bengal 711201"
+                src="https://www.google.com/maps?q=22.6538614,88.3434025&z=16&output=embed"
                 className="w-full h-[320px]"
                 loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
