@@ -4,7 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, Linkedin, Github, Code, Brain, Globe } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Code, Brain, Globe, Trophy } from "lucide-react";
 
 const Index = () => {
   const { toast } = useToast();
@@ -34,6 +34,9 @@ const Index = () => {
             </a>
             <a aria-label="GitHub" href="https://github.com/JoydeepPaul" target="_blank" rel="noreferrer">
               <Button variant="ghost" size="icon"><Github /></Button>
+            </a>
+            <a aria-label="LeetCode" href="https://leetcode.com/u/JOYDEEP_PAUL/" target="_blank" rel="noreferrer">
+              <Button variant="ghost" size="icon"><Trophy /></Button>
             </a>
           </div>
         </nav>
@@ -93,6 +96,9 @@ const Index = () => {
                 </a>
                 <a href="https://github.com/JoydeepPaul" target="_blank" rel="noreferrer">
                   <Button variant="outline"><Github /> GitHub</Button>
+                </a>
+                <a href="https://leetcode.com/u/JOYDEEP_PAUL/" target="_blank" rel="noreferrer">
+                  <Button variant="outline"><Trophy /> LeetCode</Button>
                 </a>
               </CardContent>
             </Card>
@@ -246,6 +252,7 @@ const Index = () => {
           <div className="flex gap-4">
             <a href="https://www.linkedin.com/in/joydeep-paul-70371724a/" className="hover:underline">LinkedIn</a>
             <a href="https://github.com/JoydeepPaul" className="hover:underline">GitHub</a>
+            <a href="https://leetcode.com/u/JOYDEEP_PAUL/" className="hover:underline">LeetCode</a>
           </div>
         </div>
       </footer>
