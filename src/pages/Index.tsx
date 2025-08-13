@@ -77,7 +77,7 @@ const Index = () => {
 
         <section id="about" className="py-16 border-t">
           <h2 className="text-2xl font-semibold mb-6 hover:text-primary transition-colors">About</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="animate-fade-in-up delay-100 grid md:grid-cols-2 gap-8">
             <div className="space-y-3">
               <p className="hover:text-foreground transition-colors">
                 I’m a Computer Science Engineering student at Techno Main Salt Lake (2022–2026). I enjoy full‑stack development, AI/ML, and solving real‑world problems with code.
@@ -101,7 +101,7 @@ const Index = () => {
                   <Button variant="outline" className="hover:bg-accent hover:text-accent-foreground transition-colors"><Github /> GitHub</Button>
                 </a>
                 <a href="https://leetcode.com/u/JOYDEEP_PAUL/" target="_blank" rel="noreferrer">
-                  <Button variant="outline" className="hover:bg-accent hover:text-accent-foreground transition-colors"><Trophy /> LeetCode</Button>
+                  <Button variant="outline" className="hover:bg-accent hover:text-accent-foreground transition-colors"><Trophy /></Button>
                 </a>
               </CardContent>
             </Card>
@@ -110,7 +110,7 @@ const Index = () => {
 
         <section id="experience" className="py-16 border-t">
           <h2 className="text-2xl font-semibold mb-6 hover:text-primary transition-colors">Work Experience</h2>
-          <div className="space-y-6">
+          <div className="animate-fade-in-up delay-100 space-y-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="hover:text-primary transition-colors">Internship – IIT Kharagpur (May–July 2025)</CardTitle>
@@ -137,7 +137,7 @@ const Index = () => {
 
         <section id="skills" className="py-16 border-t">
           <h2 className="text-2xl font-semibold mb-6 hover:text-primary transition-colors">Skills</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="animate-fade-in-up delay-100 grid md:grid-cols-3 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="flex items-center gap-2">
                 <Code className="hover:text-primary transition-colors" />
@@ -170,7 +170,7 @@ const Index = () => {
 
         <section id="services" className="py-16 border-t">
           <h2 className="text-2xl font-semibold mb-6 hover:text-primary transition-colors">Services</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="animate-fade-in-up delay-100 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="hover:text-primary transition-colors">Web Design</CardTitle>
@@ -185,35 +185,35 @@ const Index = () => {
         <section id="projects" className="py-16 border-t">
           <h2 className="text-2xl font-semibold mb-6 hover:text-primary transition-colors">Projects</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow animate-fade-in-up delay-100">
               <CardHeader><CardTitle className="hover:text-primary transition-colors">OCBS System</CardTitle></CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p className="text-muted-foreground hover:text-foreground transition-colors">Full‑stack cinema booking app (React, Node/Express, MongoDB).</p>
                 <a href="https://github.com/JoydeepPaul" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"><Github /> GitHub</a>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow animate-fade-in-up delay-200">
               <CardHeader><CardTitle className="hover:text-primary transition-colors">MERN Stack Project</CardTitle></CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p className="text-muted-foreground hover:text-foreground transition-colors">End‑to‑end modern web application built with the MERN stack.</p>
                 <a href="https://github.com/JoydeepPaul" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"><Github /> GitHub</a>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow animate-fade-in-up delay-300">
               <CardHeader><CardTitle className="hover:text-primary transition-colors">Rainfall Prediction</CardTitle></CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p className="text-muted-foreground hover:text-foreground transition-colors">ML‑based weather forecasting model using Random Forest.</p>
                 <a href="https://github.com/JoydeepPaul" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"><Github /> GitHub</a>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow animate-fade-in-up delay-400">
               <CardHeader><CardTitle className="hover:text-primary transition-colors">House Price Prediction App</CardTitle></CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p className="text-muted-foreground hover:text-foreground transition-colors">ML/DL pipeline for real‑estate analytics.</p>
                 <a href="https://github.com/JoydeepPaul" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-primary hover:underline transition-colors"><Github /> GitHub</a>
               </CardContent>
             </Card>
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow animate-fade-in-up delay-500">
               <CardHeader><CardTitle className="hover:text-primary transition-colors">DSA Java</CardTitle></CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p className="text-muted-foreground hover:text-foreground transition-colors">Algorithm and pattern solutions in Java.</p>
@@ -225,7 +225,7 @@ const Index = () => {
 
         <section id="contact" className="py-16 border-t">
           <h2 className="text-2xl font-semibold mb-6 hover:text-primary transition-colors">Contact</h2>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="animate-fade-in-up delay-100 grid md:grid-cols-2 gap-8">
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input name="name" placeholder="Your name" required aria-label="Name" className="hover:ring-primary transition-colors" />
               <Input type="email" name="email" placeholder="Your email" required aria-label="Email" className="hover:ring-primary transition-colors" />
