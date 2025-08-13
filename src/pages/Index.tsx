@@ -43,8 +43,13 @@ const Index = () => {
       </header>
 
       <main className="container">
-        <section className="relative flex flex-col-reverse md:flex-row items-center gap-10 py-16 min-h-screen">
-          <div className="flex-1 space-y-6 text-center md:text-left">
+        <section className="relative min-h-screen flex flex-col-reverse md:flex-row items-center gap-12 py-20 overflow-hidden">
+          {/* Background gradient effects */}
+          <div className="absolute inset-0 -z-20" style={{ background: "var(--gradient-hero)" }} />
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 -z-10 rounded-full opacity-30" style={{ background: "var(--gradient-glow)" }} />
+          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 -z-10 rounded-full opacity-20" style={{ background: "var(--gradient-radial)" }} />
+          <div className="flex-1 space-y-8 text-center md:text-left z-10">
+            <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter animate-fade-in-up hover:text-primary transition-colors">Hey there, I’m Joydeep</h1>
             <p className="text-lg text-muted-foreground animate-fade-in-up delay-100 hover:text-foreground transition-colors">Full-Stack Developer | AI & ML Enthusiast | Problem Solver</p>
             <p className="mt-4 text-muted-foreground animate-fade-in-up delay-200 hover:text-foreground transition-colors">
@@ -63,14 +68,32 @@ const Index = () => {
             </div>
           </div>
           <div className="relative flex-1 flex justify-center items-center">
-            <div className="absolute -inset-4 -z-10 rounded-full bg-accent/40 blur-2xl animate-glow" aria-hidden />
-            <div className="relative group mx-auto aspect-square w-64 md:w-80 rounded-full overflow-hidden transition-all duration-500 hover:scale-105">
-              <img
-                src="/IMG_20210328_003621.jpg"
-                alt="Profile picture of Joydeep Paul"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 rounded-full ring-4 ring-accent group-hover:ring-primary transition-colors duration-300" />
+            {/* Animated background elements */}
+            <div className="absolute inset-0 -z-10">
+              <div className="absolute top-0 left-0 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float" />
+              <div className="absolute bottom-0 right-0 w-24 h-24 bg-primary-glow/20 rounded-full blur-xl animate-float delay-1000" />
+            </div>
+            
+            {/* Main glow effect */}
+            <div 
+              className="absolute -inset-8 -z-10 rounded-full animate-glow opacity-60"
+              style={{ 
+                background: "var(--gradient-glow)",
+                boxShadow: "var(--shadow-glow)"
+              }} 
+            />
+            
+            {/* Profile image container */}
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary via-primary-glow to-primary rounded-full opacity-75 group-hover:opacity-100 blur-sm animate-glow transition-opacity duration-500" />
+              <div className="relative aspect-square w-72 md:w-96 rounded-full overflow-hidden ring-4 ring-background shadow-2xl transition-all duration-500 group-hover:scale-105">
+                <img
+                  src="/IMG_20210328_003621.jpg"
+                  alt="Profile picture of Joydeep Paul - Full Stack Developer"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
             </div>
           </div>
         </section>
