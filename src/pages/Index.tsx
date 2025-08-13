@@ -262,7 +262,7 @@ const Index = () => {
             <div className="rounded-md overflow-hidden border">
               <iframe
                 title="Home: Bally, Howrah, West Bengal 711201"
-                src="https://www.google.com/maps?q=22.6538614,88.3434025&z=16&output=embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.28014529323!2d88.34444537599026!3d22.56942063319086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02796122d25039%3A0x6a1f10c85c2c525f!2sBally%2C%20Howrah%2C%20West%20Bengal%20711201!5e0!3m2!1sen!2sin!4v1692818625902!5m2!1sen!2sin"
                 className="w-full h-[320px]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
