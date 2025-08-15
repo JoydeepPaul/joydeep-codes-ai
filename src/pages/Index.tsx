@@ -45,35 +45,35 @@ const Index = () => {
       description: "Full‑stack cinema booking app with real-time seat management and payment integration.",
       technologies: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
       githubUrl: "https://github.com/JoydeepPaul",
-      image: "/placeholder.svg"
+      image: "/cinema-booking.svg"
     },
     {
       title: "MERN Stack Project",
       description: "End‑to‑end modern web application with authentication and real-time features.",
       technologies: ["React", "Node.js", "Express", "MongoDB", "JWT"],
       githubUrl: "https://github.com/JoydeepPaul",
-      image: "/placeholder.svg"
+      image: "/mern-stack.svg"
     },
     {
       title: "Rainfall Prediction",
       description: "ML‑based weather forecasting model using Random Forest and time series analysis.",
       technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
       githubUrl: "https://github.com/JoydeepPaul",
-      image: "/placeholder.svg"
+      image: "/rainfall-prediction.svg"
     },
     {
       title: "House Price Prediction",
       description: "ML/DL pipeline for real‑estate analytics with advanced feature engineering.",
       technologies: ["Python", "TensorFlow", "Scikit-learn", "Flask", "HTML/CSS"],
       githubUrl: "https://github.com/JoydeepPaul",
-      image: "/placeholder.svg"
+      image: "/house-price-prediction.svg"
     },
     {
       title: "DSA Solutions",
       description: "Comprehensive collection of algorithm and pattern solutions in Java.",
       technologies: ["Java", "Algorithms", "Data Structures", "LeetCode"],
       githubUrl: "https://github.com/JoydeepPaul",
-      image: "/placeholder.svg"
+      image: "/dsa-solutions.svg"
     }
   ];
 

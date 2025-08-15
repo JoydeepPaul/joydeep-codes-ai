@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -7,58 +7,113 @@ import { Badge } from "@/components/ui/badge";
 import { Mail, Phone, MapPin, Send, CheckCircle, ExternalLink } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '@/lib/emailjs-config';
+
+// Initialize EmailJS with the public key - not needed in v4 but keeping for reference
+// emailjs.init(EMAILJS_CONFIG.publicKey);
 
 const ContactForm: React.FC = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const formData = new FormData(e.currentTarget);
-    const name = formData.get('name') as string;
-    const email = formData.get('email') as string;
-    const subject = formData.get('subject') as string;
-    const message = formData.get('message') as string;
-    
     try {
-      // Create a comprehensive email body
-      const emailBody = `
-Name: ${name}
-Email: ${email}
-Subject: ${subject}
-
-Message:
-${message}
-
----
-This message was sent from your portfolio contact form.
-      `;
-
-      // Create mailto link with all form data
-      const mailtoLink = `mailto:joydeeppaul791@gmail.com?subject=${encodeURIComponent(`Portfolio Contact: ${subject}`)}&body=${encodeURIComponent(emailBody)}`;
+      // Validate form data
+      const formElement = e.currentTarget;
+      const formData = new FormData(formElement);
+      const name = formData.get('from_name');
+      const email = formData.get('reply_to');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
       
-      // Open default email client
-      window.open(mailtoLink, '_blank');
+      // Check if all required fields are filled
+      if (!name || !email || !subject || !message) {
+        throw new Error('Please fill in all required fields');
+      }
       
-      toast({
-        title: "Email client opened!",
-        description: "Your default email client has been opened. Please send the email to complete the process.",
+      // Check if EmailJS is properly configured
+      if (EMAILJS_CONFIG.publicKey === "YOUR_PUBLIC_KEY" || 
+          EMAILJS_CONFIG.serviceId === "YOUR_SERVICE_ID" || 
+          EMAILJS_CONFIG.templateId === "YOUR_TEMPLATE_ID") {
+        // If not configured, fall back to mailto link
+        toast({
+          title: "EmailJS not configured",
+          description: "Redirecting to your email client instead.",
+        });
+        
+        const mailtoUrl = `mailto:${EMAILJS_CONFIG.toEmail}?subject=${encodeURIComponent(String(subject))}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)}`;
+        window.location.href = mailtoUrl;
+        
+        setIsSubmitting(false);
+        return;
+      }
+      
+      // Log the configuration for debugging
+      console.log('EmailJS Config:', {
+        serviceId: EMAILJS_CONFIG.serviceId,
+        templateId: EMAILJS_CONFIG.templateId,
+        publicKey: EMAILJS_CONFIG.publicKey ? EMAILJS_CONFIG.publicKey.substring(0, 3) + '...' : 'Missing'
       });
       
-      setIsSubmitted(true);
-      e.currentTarget.reset();
+      // Validate EmailJS configuration before sending
+      if (!EMAILJS_CONFIG.publicKey || EMAILJS_CONFIG.publicKey.length < 10) {
+        throw new Error('Invalid EmailJS public key configuration');
+      }
       
-      // Reset submitted state after 5 seconds
-      setTimeout(() => setIsSubmitted(false), 5000);
+      if (!formRef.current) {
+        throw new Error('Form reference is not available');
+      }
       
+      // Send the email using EmailJS with proper error handling
+      let result;
+      try {
+        result = await emailjs.sendForm(
+          EMAILJS_CONFIG.serviceId,
+          EMAILJS_CONFIG.templateId,
+          formRef.current,
+          { publicKey: EMAILJS_CONFIG.publicKey }
+        );
+        
+        console.log('EmailJS result:', result);
+      } catch (sendError) {
+        console.error('EmailJS send error:', sendError);
+        throw new Error(sendError instanceof Error ? sendError.message : 'Failed to send email through EmailJS');
+      }
+      
+      // Check if the email was sent successfully
+      if (result.status === 200) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for your message. I'll get back to you soon.",
+        });
+        
+        setIsSubmitted(true);
+        formElement.reset();
+        
+        // Reset submitted state after 5 seconds
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        throw new Error(`Failed to send email: Status ${result.status}`);
+      }
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error sending email:", error);
+      
+      // Provide more specific error information
+      let errorMessage = "Please contact me directly at joydeeppaul791@gmail.com";
+      
+      if (error instanceof Error) {
+        errorMessage = `${error.message}. Please contact me directly at joydeeppaul791@gmail.com`;
+      }
+      
       toast({
-        title: "Error opening email client",
-        description: "Please contact me directly at joydeeppaul791@gmail.com",
+        title: "Error sending message",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {
@@ -104,7 +159,7 @@ This message was sent from your portfolio contact form.
         </CardHeader>
         
         <CardContent className="relative z-10">
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium text-foreground">
@@ -112,7 +167,7 @@ This message was sent from your portfolio contact form.
                 </label>
                 <Input
                   id="name"
-                  name="name"
+                  name="from_name"
                   placeholder="Your name"
                   required
                   className="transition-all duration-200 focus:ring-2 focus:ring-primary/20 focus:border-primary"
@@ -125,7 +180,7 @@ This message was sent from your portfolio contact form.
                 <Input
                   id="email"
                   type="email"
-                  name="email"
+                  name="reply_to"
                   placeholder="your.email@example.com"
                   required
                   className="transition-all duration-200 focus:ring-2 focus:ring-primary/20 focus:border-primary"
@@ -171,12 +226,12 @@ This message was sent from your portfolio contact form.
                {isSubmitting ? (
                  <>
                    <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
-                   Opening Email...
+                   Sending...
                  </>
                ) : isSubmitted ? (
                  <>
                    <CheckCircle className="mr-2 h-4 w-4" />
-                   Email Opened!
+                   Message Sent!
                  </>
                ) : (
                  <>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f0f8ff" />
+  
+  <!-- Cloud 1 -->
+  <g transform="translate(200, 150)">
+    <ellipse cx="0" cy="0" rx="60" ry="40" fill="#e6e6e6" />
+    <ellipse cx="50" cy="-10" rx="70" ry="40" fill="#e6e6e6" />
+    <ellipse cx="90" cy="10" rx="50" ry="35" fill="#e6e6e6" />
+    <ellipse cx="40" cy="20" rx="60" ry="35" fill="#e6e6e6" />
+    <ellipse cx="-40" cy="10" rx="50" ry="30" fill="#e6e6e6" />
+  </g>
+  
+  <!-- Cloud 2 -->
+  <g transform="translate(550, 120)">
+    <ellipse cx="0" cy="0" rx="50" ry="30" fill="#d9d9d9" />
+    <ellipse cx="40" cy="-5" rx="60" ry="30" fill="#d9d9d9" />
+    <ellipse cx="70" cy="10" rx="40" ry="25" fill="#d9d9d9" />
+    <ellipse cx="30" cy="15" rx="50" ry="25" fill="#d9d9d9" />
+    <ellipse cx="-30" cy="10" rx="40" ry="20" fill="#d9d9d9" />
+  </g>
+  
+  <!-- Raindrops from Cloud 1 -->
+  <g fill="#4682b4">
+    <!-- First column -->
+    <path d="M160,200 Q160,220 170,230 Q180,220 180,200 Q170,190 160,200 Z" />
+    <path d="M190,210 Q190,230 200,240 Q210,230 210,210 Q200,200 190,210 Z" />
+    <path d="M220,190 Q220,210 230,220 Q240,210 240,190 Q230,180 220,190 Z" />
+    <path d="M250,200 Q250,220 260,230 Q270,220 270,200 Q260,190 250,200 Z" />
+    <path d="M280,210 Q280,230 290,240 Q300,230 300,210 Q290,200 280,210 Z" />
+    
+    <!-- Second column -->
+    <path d="M170,250 Q170,270 180,280 Q190,270 190,250 Q180,240 170,250 Z" />
+    <path d="M200,260 Q200,280 210,290 Q220,280 220,260 Q210,250 200,260 Z" />
+    <path d="M230,240 Q230,260 240,270 Q250,260 250,240 Q240,230 230,240 Z" />
+    <path d="M260,250 Q260,270 270,280 Q280,270 280,250 Q270,240 260,250 Z" />
+    <path d="M290,260 Q290,280 300,290 Q310,280 310,260 Q300,250 290,260 Z" />
+    
+    <!-- Third column -->
+    <path d="M180,300 Q180,320 190,330 Q200,320 200,300 Q190,290 180,300 Z" />
+    <path d="M210,310 Q210,330 220,340 Q230,330 230,310 Q220,300 210,310 Z" />
+    <path d="M240,290 Q240,310 250,320 Q260,310 260,290 Q250,280 240,290 Z" />
+    <path d="M270,300 Q270,320 280,330 Q290,320 290,300 Q280,290 270,300 Z" />
+    <path d="M300,310 Q300,330 310,340 Q320,330 320,310 Q310,300 300,310 Z" />
+  </g>
+  
+  <!-- Raindrops from Cloud 2 -->
+  <g fill="#4682b4">
+    <!-- First column -->
+    <path d="M510,180 Q510,200 520,210 Q530,200 530,180 Q520,170 510,180 Z" />
+    <path d="M540,190 Q540,210 550,220 Q560,210 560,190 Q550,180 540,190 Z" />
+    <path d="M570,170 Q570,190 580,200 Q590,190 590,170 Q580,160 570,170 Z" />
+    <path d="M600,180 Q600,200 610,210 Q620,200 620,180 Q610,170 600,180 Z" />
+    
+    <!-- Second column -->
+    <path d="M520,230 Q520,250 530,260 Q540,250 540,230 Q530,220 520,230 Z" />
+    <path d="M550,240 Q550,260 560,270 Q570,260 570,240 Q560,230 550,240 Z" />
+    <path d="M580,220 Q580,240 590,250 Q600,240 600,220 Q590,210 580,220 Z" />
+    <path d="M610,230 Q610,250 620,260 Q630,250 630,230 Q620,220 610,230 Z" />
+  </g>
+  
+  <!-- Data Visualization Elements -->
+  <!-- Graph Background -->
+  <rect x="100" y="380" width="600" height="180" rx="10" fill="white" stroke="#ddd" stroke-width="2" />
+  
+  <!-- Graph Title -->
+  <text x="400" y="410" font-family="Arial" font-size="18" text-anchor="middle" fill="#333">Rainfall Prediction Model</text>
+  
+  <!-- X and Y Axis -->
+  <line x1="150" y1="500" x2="650" y2="500" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="500" x2="150" y2="420" stroke="#333" stroke-width="2" />
+  
+  <!-- X Axis Labels -->
+  <text x="200" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Jan</text>
+  <text x="250" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Feb</text>
+  <text x="300" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Mar</text>
+  <text x="350" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Apr</text>
+  <text x="400" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">May</text>
+  <text x="450" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Jun</text>
+  <text x="500" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Jul</text>
+  <text x="550" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Aug</text>
+  <text x="600" y="520" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Sep</text>
+  
+  <!-- Y Axis Labels -->
+  <text x="140" y="430" font-family="Arial" font-size="12" text-anchor="end" fill="#666">100mm</text>
+  <text x="140" y="450" font-family="Arial" font-size="12" text-anchor="end" fill="#666">75mm</text>
+  <text x="140" y="470" font-family="Arial" font-size="12" text-anchor="end" fill="#666">50mm</text>
+  <text x="140" y="490" font-family="Arial" font-size="12" text-anchor="end" fill="#666">25mm</text>
+  
+  <!-- Actual Data Line -->
+  <polyline points="200,480 250,460 300,470 350,450 400,430 450,440 500,460 550,470 600,450" 
+            fill="none" stroke="#4682b4" stroke-width="3" />
+  
+  <!-- Predicted Data Line (dashed) -->
+  <polyline points="600,450 650,440" 
+            fill="none" stroke="#ff7f50" stroke-width="3" stroke-dasharray="5,5" />
+  
+  <!-- Data Points -->
+  <circle cx="200" cy="480" r="4" fill="#4682b4" />
+  <circle cx="250" cy="460" r="4" fill="#4682b4" />
+  <circle cx="300" cy="470" r="4" fill="#4682b4" />
+  <circle cx="350" cy="450" r="4" fill="#4682b4" />
+  <circle cx="400" cy="430" r="4" fill="#4682b4" />
+  <circle cx="450" cy="440" r="4" fill="#4682b4" />
+  <circle cx="500" cy="460" r="4" fill="#4682b4" />
+  <circle cx="550" cy="470" r="4" fill="#4682b4" />
+  <circle cx="600" cy="450" r="4" fill="#4682b4" />
+  <circle cx="650" cy="440" r="4" fill="#ff7f50" />
+  
+  <!-- Legend -->
+  <rect x="500" y="380" width="12" height="6" fill="#4682b4" />
+  <text x="520" y="386" font-family="Arial" font-size="12" fill="#333">Actual Rainfall</text>
+  
+  <rect x="500" y="395" width="12" height="6" fill="#ff7f50" />
+  <text x="520" y="401" font-family="Arial" font-size="12" fill="#333">Predicted Rainfall</text>
+  
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#333">Rainfall Prediction</text>
+  <text x="400" y="80" font-family="Arial" font-size="16" text-anchor="middle" fill="#666">Machine Learning Weather Forecasting</text>
+</svg>
